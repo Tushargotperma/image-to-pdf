@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: image-to-pdf
+    runtime: python
+    repo: https://github.com/tushargotperma/image-to-pdf
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
